@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .input-group {
+            flex: 0 0 calc(33.33% - 20px);
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form action="/predict" method="post">
+        <h1>House Price Prediction</h1>
+
+        <div class="row">
+            <div class="input-group">
+                <label for="bedrooms">Bedrooms:</label>
+                <input type="number" name="bedrooms" required>
+            </div>
+
+            <div class="input-group">
+                <label for="bathrooms">Bathrooms:</label>
+                <input type="number" name="bathrooms" required>
+            </div>
+
+            <div class="input-group">
+                <label for="sqft_living">Sqft Living:</label>
+                <input type="number" name="sqft_living" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-group">
+                <label for="sqft_lot">Sqft Lot:</label>
+                <input type="number" name="sqft_lot" required>
+            </div>
+
+            <div class="input-group">
+                <label for="floors">Floors:</label>
+                <input type="number" name="floors" required>
+            </div>
+
+            <div class="input-group">
+                <label for="waterfront">Waterfront (1 for Yes, 0 for No):</label>
+                <input type="number" name="waterfront" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-group">
+                <label for="view">View:</label>
+                <input type="number" name="view" required>
+            </div>
+
+            <div class="input-group">
+                <label for="condition">Condition:</label>
+                <input type="number" name="condition" required>
+            </div>
+
+            <div class="input-group">
+                <label for="sqft_above">Sqft Above:</label>
+                <input type="number" name="sqft_above" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-group">
+                <label for="sqft_basement">Sqft Basement:</label>
+                <input type="number" name="sqft_basement" required>
+            </div>
+
+            <div class="input-group">
+                <label for="age">Age:</label>
+                <input type="number" name="age" required>
+            </div>
+
+            <div class="input-group">
+                <label for="age_renovated">Age Renovated:</label>
+                <input type="number" name="age_renovated" required>
+            </div>
+        </div>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
