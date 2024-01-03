@@ -4,16 +4,20 @@ from sklearn.preprocessing import MinMaxScaler
 import pickle
 import numpy as np
 
+
+# Initialize the flask app
 app = Flask(__name__)
 
 # Load the trained Linear Regression model
 with open("Output/lr.pkl", 'rb') as model_file:
     linear_model = pickle.load(model_file)
 
+# Home Route
 @app.route('/')
 def home():
     return render_template('index.html')
 
+# Predict Route
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
