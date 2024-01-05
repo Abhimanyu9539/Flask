@@ -9,11 +9,12 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return render_template("index.html")
-
+# Initialize the success route
 @app.route('/success/<int:marks>')
 def success(marks):
     return render_template("pass.html", score=marks)
 
+# Initilaize the failure route
 @app.route('/fail/<int:marks>')
 def fail(marks):
     return render_template("fail.html", score = marks)
